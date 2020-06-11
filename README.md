@@ -2,7 +2,7 @@
 ## Performs defacing of brain MRI for anonymization
 
 This code performs defacing of brain mri by first applying rigid 
- registration and then deforming the mask from BCI-DNI brain
+ registration and then deforming the mask from BCI-DNI brain. To use the code open main_deface_mri.m in MATLAB and follow the instructions.
 
 ### INPUT: 
  This following code expects that the _subject_.mask.nii.ga and
