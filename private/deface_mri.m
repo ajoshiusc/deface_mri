@@ -16,7 +16,7 @@
 
 function deface_mri(subbasename,atlasbasename,atlas_deface_mask)
 
-DIL_SZ=5;
+DIL_SZ=7;
 
 mri_mask = [subbasename,'.mask.nii.gz'];
 mri_bse = [subbasename,'.bfc.nii.gz'];
