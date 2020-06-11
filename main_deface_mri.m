@@ -27,7 +27,7 @@ atlasbasename = '/home/ajoshi/BrainSuite19b/svreg/BCI-DNI_brain_atlas/BCI-DNI_br
 
 % Deface mask that is included with this script. It is in the same
 % directory as this code.
-atlas_deface_mask = ['BCI-DNI_brain.deface3.mask.nii.gz'];
+atlas_deface_mask = ['BCI-DNI_brain.deface.mask.nii.gz'];
 
 aa=tic;
 
