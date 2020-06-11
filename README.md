@@ -10,3 +10,5 @@ This code performs defacing of brain mri by first applying rigid registration an
  
 ### OUTPUT:
  The output is stored at _subject_.deface.mask.nii.gz and _subject_.deface.nii.gz
+
+![Defacing](https://github.com/ajoshiusc/deface_mri/blob/master/mri_defacing.png)
