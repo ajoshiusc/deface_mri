@@ -20,7 +20,7 @@ restoredefaultpath;
 
 %%
 % This is the name of the subject mri that you want to deface
-subbasename = '/deneb_disk/defacing_data/1001_T1'; 
+subbasename = '/home/ajoshi/Desktop/temp/preMRI' %'/deneb_disk/defacing_data/1001_T1'; 
 
 % Location of BrainSuite's BCI-DNI atlas
 atlasbasename = '/home/ajoshi/BrainSuite19b/svreg/BCI-DNI_brain_atlas/BCI-DNI_brain';

@@ -67,7 +67,7 @@ end
 if abs(abs(det(Mrest))-1)>1e-3
    sformT
    nii_in.hdr.dime.pixdim
-   error('Absolute determinant of transformation matrix is not 1. Something is wrong!')
+   warning('Absolute determinant of transformation matrix is not 1. Something is wrong!')
 end
 
 
@@ -79,7 +79,7 @@ if sum(max_mask(:))>3
    sformT
    max_mask
    nii_in.hdr.dime.pixdim
-   error('Something is wrong with sform matrix !')
+   warning('Something is wrong with sform matrix !')
 end
 temp = Mrest(max_mask);
 reorient_matrix(max_mask) = temp./abs(temp);
@@ -90,7 +90,7 @@ if abs(abs(det(reorient_matrix))-1)>1e-3
    sformT
    reorient_matrix
    nii_in.hdr.dime.pixdim
-   error('Absolute determinant of orientation matrix is not 1. Something is wrong!')
+   warning('Absolute determinant of orientation matrix is not 1. Something is wrong!')
 end
 
 if is_canonical_mat(reorient_matrix) && abs(det(Mrest)-1)<1e-3  % already aligned to canonical coordinates
@@ -108,7 +108,7 @@ elseif is_canonical_mat(reorient_matrix) && abs(det(Mrest)-1)>1e-3
    Mrest
    reorient_matrix
    nii_in.hdr.dime.pixdim
-   error('Something went wrong with sform matrix!')
+   warning('Something went wrong with sform matrix!')
 end
 
 
@@ -121,7 +121,7 @@ if abs(det(Mrest_rot_residue)-1)>1e-3
    Rot_residue
    Mrest_rot_residue
    nii_in.hdr.dime.pixdim
-   error('Residue matrix is not rotation matrix. Something went wrong!')
+   warning('Residue matrix is not rotation matrix. Something went wrong!')
 end
 
 
