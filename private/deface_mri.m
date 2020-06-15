@@ -58,10 +58,23 @@ v=load_nii_BIG_Lab(output_file);
 v.img = imdilate(v.img, nhoodd);
 save_untouch_nii_gz(v,output_file);
 
+
 if exist([subbasename,'.nii.gz'],'file')
-    v1=load_nii_BIG_Lab([subbasename,'.nii.gz']);
+    sub_file=[subbasename,'.nii.gz'];
 elseif exist([subbasename,'.nii'],'file')
-    v1=load_nii_BIG_Lab([subbasename,'.nii']);
+    sub_file=[subbasename,'.nii'];
+end
+
+try
+    check_nifti_file(sub_file);
+catch
+    % If there is error in the header, replace it with 1mm isotropic header.
+    v1=load_untouch_nii_gz(sub_file);
+    % Make the header look like BrainSuite header
+    v1.hdr.hist.srow_x(1:3)=[v.hdr.dime.pixdim(2),0,0];
+    v1.hdr.hist.srow_y(1:3)=[0,v.hdr.dime.pixdim(3),0];
+    v1.hdr.hist.srow_z(1:3)=[0,0,v.hdr.dime.pixdim(4)];
+    v1.hdr.dime.scl_slope = 0;
 end
 
 v1.img=double(v1.img).*double(v.img>0);

@@ -76,12 +76,12 @@ if nii.hdr.hist.sform_code > 0
 
    if max(abs(Mrest(:)))<1e-3
       sform
-      warning('BDP:CheckNiftiFile:HeaderError', 'sform_code is set but sform matrix is very close to zero matrix in file: %s',...
+      error('BDP:CheckNiftiFile:HeaderError', 'sform_code is set but sform matrix is very close to zero matrix in file: %s',...
          escape_filename(nifti_file));
       
    elseif abs(abs(det(Mrest))-1)>1e-2  % check if Mrest is rotation matrix
       sform
-      warning('BDP:CheckNiftiFile:HeaderError', ['Absolute determinant of sform matrix is not 1. Header seems to be' ...
+      error('BDP:CheckNiftiFile:HeaderError', ['Absolute determinant of sform matrix is not 1. Header seems to be' ...
          'wrong (not a rotation matrix) in file: %s'], escape_filename(nifti_file))
    end
 end
