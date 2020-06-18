@@ -67,6 +67,7 @@ end
 
 try
     check_nifti_file(sub_file);
+    v1=load_untouch_nii_gz(sub_file);
 catch
     % If there is error in the header, replace it with 1mm isotropic header.
     v1=load_untouch_nii_gz(sub_file);
